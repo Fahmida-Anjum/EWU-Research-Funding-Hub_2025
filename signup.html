@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up - EWU Research Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #e0f2fe, #f0fdfa);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .signup-container {
+      background-color: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      width: 400px;
+      text-align: center;
+    }
+
+    .signup-container h2 {
+      color: #1e3a8a;
+      margin-bottom: 10px;
+    }
+
+    .signup-container p {
+      color: #6b7280;
+      margin-bottom: 25px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    button {
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    button:hover {
+      background-color: #1e40af;
+    }
+
+    .links {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .links a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="signup-container">
+    <h2>Create an Account</h2>
+    <p>Register to access your dashboard</p>
+    <input type="text" placeholder="Full Name" id="fullname" />
+    <input type="email" placeholder="Email" id="email" />
+    <input type="text" placeholder="Username" id="username" />
+    <input type="password" placeholder="Password" id="password" />
+    <select id="role">
+      <option value="student">Student</option>
+      <option value="admin">Admin</option>
+      <option value="provc">Pro-VC</option>
+      <option value="vc">VC</option>
+    </select>
+    <button onclick="handleSignup()">Sign Up</button>
+
+    <div class="links">
+      Already have an account? <a href="login.html">Login</a>
+    </div>
+  </div>
+
+  <script>
+    function handleSignup() {
+      const fullname = document.getElementById("fullname").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const role = document.getElementById("role").value;
+
+      if (!fullname || !email || !username || !password) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      // Dummy success (replace with real backend code)
+      alert("Account created! You will be redirected to login.");
+      window.location.href = `login.html?role=${role}`;
+    }
+  </script>
+
+</body>
+</html>

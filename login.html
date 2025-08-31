@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - EWU Research Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #e0f2fe, #f0fdfa);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background-color: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      width: 380px;
+      text-align: center;
+    }
+
+    .login-container h2 {
+      margin-bottom: 10px;
+      color: #1e3a8a;
+    }
+
+    .login-container p {
+      color: #6b7280;
+      margin-bottom: 30px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    button {
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    button:hover {
+      background-color: #1e40af;
+    }
+
+    .role-badge {
+      background-color: #dbeafe;
+      color: #1d4ed8;
+      padding: 6px 12px;
+      border-radius: 999px;
+      display: inline-block;
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+
+    .links {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .links a {
+      color: #2563eb;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="role-badge" id="roleDisplay">Role: Guest</div>
+    <h2>Welcome Back</h2>
+    <p>Please log in to continue</p>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="handleLogin()">Login</button>
+
+    <div class="links">
+      <p>
+        Don't have an account? <a href="signup.html" id="signupLink">Sign up</a>
+        <br />
+        <a href="forgot-password.html">Forgot Password?</a>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // Get role from query parameter
+    const params = new URLSearchParams(window.location.search);
+    const role = params.get("role") || "guest";
+    document.getElementById("roleDisplay").innerText = "Role: " + role.charAt(0).toUpperCase() + role.slice(1);
+
+    function handleLogin() {
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      if (!username || !password) {
+        alert("Please enter both username and password.");
+        return;
+      }
+
+      // Dummy authentication (replace with backend logic later)
+      if (password === "1234") {
+        switch (role) {
+          case "student": window.location.href = "student.html"; break;
+          case "admin": window.location.href = "admin.html"; break;
+          case "provc": window.location.href = "provc.html"; break;
+          case "vc": window.location.href = "vc.html"; break;
+          default: alert("Unknown role.");
+        }
+      } else {
+        alert("Invalid username or password!");
+      }
+    }
+  </script>
+
+</body>
+</html>
