@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EWU Research Funding Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #f9fafb;
+    }
+
+    header {
+      background: linear-gradient(to right, #1e3a8a, #2563eb);
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-icon {
+      background-color: white;
+      color: #1e3a8a;
+      border-radius: 50%;
+      padding: 6px 10px;
+      font-weight: bold;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .login-btn {
+      background-color: white;
+      color: #1e3a8a;
+      padding: 8px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .container {
+      text-align: center;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 30px;
+      color: #111827;
+    }
+
+    .roles {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .card {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      width: 200px;
+      text-align: center;
+      transition: transform 0.2s;
+      text-decoration: none;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-icon {
+      font-size: 28px;
+      margin-bottom: 15px;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      margin: 0 auto 15px;
+      color: white;
+    }
+
+    .student { background-color: #60a5fa; }   /* pastel blue */
+    .admin { background-color: #6ee7b7; }     /* pastel green */
+    .provc { background-color: #c4b5fd; }     /* pastel purple */
+    .vc { background-color: #fca5a5; }        /* pastel red */
+
+    .card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: #111827;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #6b7280;
+    }
+
+    @media screen and (max-width: 600px) {
+      .roles {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <div class="logo-icon">📘</div>
+      <div>
+        <strong>EWU Research Funding Hub</strong><br />
+        <small>Streamlining Research Paper Funding</small>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="guidelines.html">Guidelines</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" class="login-btn">Login</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Select Your Role</h2>
+    <div class="roles">
+      <a href="login.html?role=student" class="card">
+        <div class="card-icon student">👤</div>
+        <h3>Student</h3>
+        <p>Apply for research paper funding</p>
+      </a>
+      <a href="login.html?role=admin" class="card">
+        <div class="card-icon admin">✅</div>
+        <h3>Admin</h3>
+        <p>Review and validate applications</p>
+      </a>
+      <a href="login.html?role=provc" class="card">
+        <div class="card-icon provc">📋</div>
+        <h3>Pro-VC</h3>
+        <p>Review and approve applications</p>
+      </a>
+      <a href="login.html?role=vc" class="card">
+        <div class="card-icon vc">✔️</div>
+        <h3>VC</h3>
+        <p>Final approval of applications</p>
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
